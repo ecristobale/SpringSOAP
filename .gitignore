@@ -24,3 +24,5 @@ SpringSoapProducer/.settings/org.eclipse.jdt.core.prefs
 SpringSoapProducer/.settings/.jsdtscope
 SpringSoapProducer/.project
 SpringSoapProducer/.classpath
+SpringSoapProducer/target/classes/com/ecristobale/OperationsImpl.class
+SpringSoapProducer/target/classes/com/ecristobale/IOperations.class
