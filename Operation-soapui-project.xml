@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="75c656b7-ced4-4c09-9915-b44303d5b9ca" activeEnvironment="Default" name="Operation" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="7282628a-9c32-4477-bddb-badd0b882f9a" wsaVersion="NONE" name="OperationsImplServiceSoapBinding" type="wsdl" bindingName="{http://ecristobale.com/}OperationsImplServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/SpringSoapProducer/services/op?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/SpringSoapProducer/services/op?wsdl"><con:part><con:url>http://localhost:8080/SpringSoapProducer/services/op?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="OperationsImplService" targetNamespace="http://ecristobale.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ecristobale.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://ecristobale.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="add" type="tns:add"/>
+      <xs:element name="addResponse" type="tns:addResponse"/>
+      <xs:complexType name="add">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:int"/>
+          <xs:element name="arg1" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="addResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="addResponse">
+    <wsdl:part element="tns:addResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="add">
+    <wsdl:part element="tns:add" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="IOperations">
+    <wsdl:operation name="add">
+      <wsdl:input message="tns:add" name="add"></wsdl:input>
+      <wsdl:output message="tns:addResponse" name="addResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OperationsImplServiceSoapBinding" type="tns:IOperations">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="add">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="add">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OperationsImplService">
+    <wsdl:port binding="tns:OperationsImplServiceSoapBinding" name="OperationsImplPort">
+      <soap:address location="http://localhost:8080/SpringSoapProducer/services/op"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/SpringSoapProducer/services/op</con:endpoint></con:endpoints><con:operation id="1d828574-14e4-45cf-96f2-1760913a2a6d" isOneWay="false" action="" name="add" bindingOperationName="add" type="Request-Response" outputName="addResponse" inputName="add" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="fee0ced9-4af3-4dd0-b380-00529cee6816" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/SpringSoapProducer/services/op</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ecr="http://ecristobale.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ecr:add>\r
+         <arg0>3</arg0>\r
+         <arg1>4</arg1>\r
+      </ecr:add>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ecristobale.com/IOperations/add"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
