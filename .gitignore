@@ -26,3 +26,14 @@ SpringSoapProducer/.project
 SpringSoapProducer/.classpath
 SpringSoapProducer/target/classes/com/ecristobale/OperationsImpl.class
 SpringSoapProducer/target/classes/com/ecristobale/IOperations.class
+SpringSoapConsumer/bin/com/ecristobale/readme.txt
+SpringSoapConsumer/bin/com/ecristobale/package-info.class
+SpringSoapConsumer/bin/com/ecristobale/app/MainApp.class
+SpringSoapConsumer/bin/com/ecristobale/OperationsImplService.class
+SpringSoapConsumer/bin/com/ecristobale/ObjectFactory.class
+SpringSoapConsumer/bin/com/ecristobale/IOperations.class
+SpringSoapConsumer/bin/com/ecristobale/AddResponse.class
+SpringSoapConsumer/bin/com/ecristobale/Add.class
+SpringSoapConsumer/.settings/org.eclipse.jdt.core.prefs
+SpringSoapConsumer/.project
+SpringSoapConsumer/.classpath
