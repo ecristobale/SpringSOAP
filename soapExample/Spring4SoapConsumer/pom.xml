@@ -2,8 +2,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.concretepage.app</groupId>
-  <artifactId>spring4soap</artifactId>
+  <groupId>com.ecristobal.app</groupId>
+  <artifactId>spring4soapclient</artifactId>
   <version>1</version>
   <packaging>jar</packaging>      
   <name>Spring 4 Soap Client</name>
@@ -33,11 +33,11 @@
 		    </executions>
 		    <configuration>
 		        <schemaLanguage>WSDL</schemaLanguage>
-		        <generatePackage>com.concretepage.wsdl</generatePackage>
+		        <generatePackage>com.ecristobale.wsdl</generatePackage>
 		        <forceRegenerate>true</forceRegenerate>
 		        <schemas>
 		            <schema>
-		                <url>http://localhost:8080/spring4soap-1/soapws/students.wsdl</url>
+		                <url>http://localhost:8080/springbootsoap/locationUriWS/studentsWsdl.wsdl</url>
 		            </schema>
 		        </schemas>
 		    </configuration>
