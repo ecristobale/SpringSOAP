@@ -5,5 +5,5 @@
 // Generado el: 2019.01.13 a las 03:59:08 PM CET 
 //
 
-@javax.xml.bind.annotation.XmlSchema(namespace = "http://ecristobale.com/soap", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
-package com.ecristobale.soap;
+@javax.xml.bind.annotation.XmlSchema(namespace = "http://ecristobal.com/article", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
+package com.ecristobal.article;

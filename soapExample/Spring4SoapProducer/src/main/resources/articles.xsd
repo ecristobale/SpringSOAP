@@ -1,0 +1,27 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://ecristobal.com/article"
+	targetNamespace="http://ecristobal.com/article"
+	elementFormDefault="qualified">
+
+	<xs:element name="getArticleByIdRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="articleId" type="xs:int" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="getArticleByIdResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="articleInfo" type="tns:articleInfo" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="articleInfo">
+		<xs:sequence>
+			<xs:element name="articleId" type="xs:int" />
+			<xs:element name="title" type="xs:string" />
+			<xs:element name="category" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
