@@ -47,3 +47,7 @@ soapExample/Spring4SoapProducer/.settings/org.eclipse.jdt.core.prefs
 soapExample/Spring4SoapProducer/.settings/.jsdtscope
 soapExample/Spring4SoapProducer/.project
 soapExample/Spring4SoapProducer/.classpath
+soapExample/Spring4SoapConsumer/.settings/org.eclipse.m2e.core.prefs
+soapExample/Spring4SoapConsumer/.settings/org.eclipse.jdt.core.prefs
+soapExample/Spring4SoapConsumer/.project
+soapExample/Spring4SoapConsumer/.classpath
