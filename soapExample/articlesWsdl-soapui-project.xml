@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="ddf01ac2-d09f-488f-9052-315bd7869bca" activeEnvironment="Default" name="articlesWsdl" soapui-version="5.4.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="a2329389-b8c4-4362-a6a9-98d6fb70b6bf" wsaVersion="NONE" name="ArticlesPortTypeSoap11" type="wsdl" bindingName="{http://ecristobal.com/article}ArticlesPortTypeSoap11" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/springbootsoap/articlesUriWS/articlesWsdl.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/springbootsoap/articlesUriWS/articlesWsdl.wsdl"><con:part><con:url>http://localhost:8080/springbootsoap/articlesUriWS/articlesWsdl.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://ecristobal.com/article" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://ecristobal.com/article" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ecristobal.com/article">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://ecristobal.com/article" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="getArticleByIdRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="articleId" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getArticleByIdResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="articleInfo" type="tns:articleInfo"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="articleInfo">
+        <xs:sequence>
+          <xs:element name="articleId" type="xs:int"/>
+          <xs:element name="title" type="xs:string"/>
+          <xs:element name="category" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getArticleByIdRequest">
+    <wsdl:part element="tns:getArticleByIdRequest" name="getArticleByIdRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getArticleByIdResponse">
+    <wsdl:part element="tns:getArticleByIdResponse" name="getArticleByIdResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ArticlesPortType">
+    <wsdl:operation name="getArticleById">
+      <wsdl:input message="tns:getArticleByIdRequest" name="getArticleByIdRequest"></wsdl:input>
+      <wsdl:output message="tns:getArticleByIdResponse" name="getArticleByIdResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ArticlesPortTypeSoap11" type="tns:ArticlesPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getArticleById">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getArticleByIdRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getArticleByIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ArticlesPortTypeService">
+    <wsdl:port binding="tns:ArticlesPortTypeSoap11" name="ArticlesPortTypeSoap11">
+      <soap:address location="http://localhost:8080/springbootsoap/articlesUriWS"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/springbootsoap/articlesUriWS</con:endpoint></con:endpoints><con:operation id="18d3fc88-a798-4e91-a9c1-575c6b892daa" isOneWay="false" action="" name="getArticleById" bindingOperationName="getArticleById" type="Request-Response" outputName="getArticleByIdResponse" inputName="getArticleByIdRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b096eff0-ab8b-4b61-8ee8-0da654fafd85" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/springbootsoap/articlesUriWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:art="http://ecristobal.com/article">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <art:getArticleByIdRequest>\r
+         <art:articleId>2</art:articleId>\r
+      </art:getArticleByIdRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ecristobal.com/article/ArticlesPortType/getArticleByIdRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

@@ -6,7 +6,7 @@
 //
 
 
-package com.ecristobale.soap;
+package com.ecristobal.article;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -24,7 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="studentId" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="articleId" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -35,27 +35,27 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "studentId"
+    "articleId"
 })
-@XmlRootElement(name = "addStudentResponse")
-public class AddStudentResponse {
+@XmlRootElement(name = "getArticleByIdRequest")
+public class GetArticleByIdRequest {
 
-    protected int studentId;
+    protected int articleId;
 
     /**
-     * Obtiene el valor de la propiedad studentId.
+     * Obtiene el valor de la propiedad articleId.
      * 
      */
-    public int getStudentId() {
-        return studentId;
+    public int getArticleId() {
+        return articleId;
     }
 
     /**
-     * Define el valor de la propiedad studentId.
+     * Define el valor de la propiedad articleId.
      * 
      */
-    public void setStudentId(int value) {
-        this.studentId = value;
+    public void setArticleId(int value) {
+        this.articleId = value;
     }
 
 }
