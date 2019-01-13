@@ -14,6 +14,8 @@ import org.springframework.xml.xsd.XsdSchema;
 @EnableWs
 @ComponentScan("com.ecristobale")
 public class AppConfig extends WsConfigurerAdapter {
+	
+	// WSDL: http://localhost:8080/springbootsoap/urisoapws/studentsWsdl.wsdl
 	// nombre del WSDL: localhost:8080/{artifactId}/{URI}/ NOMBRE .wsdl
 	// también es el nombre del proyecto en SOAP UI cuando importas por el WSDL
 	@Bean(name = "studentsWsdl")
@@ -35,6 +37,7 @@ public class AppConfig extends WsConfigurerAdapter {
 		return new SimpleXsdSchema(new ClassPathResource("students.xsd"));
 	}
 	
+	// WSDL: http://localhost:8080/springbootsoap/articlesUriWS/articlesWsdl.wsdl
 	@Bean(name = "articlesWsdl")
 	public DefaultWsdl11Definition defaultWsdl11DefinitionArticles(XsdSchema articlesSchema) {
 		DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
