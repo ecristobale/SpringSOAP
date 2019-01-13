@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="4c7d0bea-03ca-43cf-9bf9-7e5792ffb71f" activeEnvironment="Default" name="studentsWsdl" soapui-version="5.4.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="d25ba9c0-f1d7-4016-8814-76b229f8405e" wsaVersion="NONE" name="StudentsPortTypeSoap11" type="wsdl" bindingName="{http://ecristobale.com/soap}StudentsPortTypeSoap11" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/springbootsoap/locationUriWS/studentsWsdl.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/springbootsoap/locationUriWS/studentsWsdl.wsdl"><con:part><con:url>http://localhost:8080/springbootsoap/locationUriWS/studentsWsdl.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://ecristobale.com/soap" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://ecristobale.com/soap" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ecristobale.com/soap">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://ecristobale.com/soap" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <!--tns y targetNamespace tienen que coincidir y definen la generación en java
+		 de los packages y definen para el XML el lugar donde van a estar-->
+      <xs:element name="getStudentRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="studentId" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getStudentResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="student" type="tns:student"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="addStudentRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="student" type="tns:student"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="addStudentResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="studentId" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="student">
+        <xs:sequence>
+          <xs:element name="studentId" type="xs:int"/>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="age" type="xs:int"/>
+          <xs:element name="class" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="addStudentRequest">
+    <wsdl:part element="tns:addStudentRequest" name="addStudentRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addStudentResponse">
+    <wsdl:part element="tns:addStudentResponse" name="addStudentResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getStudentResponse">
+    <wsdl:part element="tns:getStudentResponse" name="getStudentResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getStudentRequest">
+    <wsdl:part element="tns:getStudentRequest" name="getStudentRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="StudentsPortType">
+    <wsdl:operation name="addStudent">
+      <wsdl:input message="tns:addStudentRequest" name="addStudentRequest"></wsdl:input>
+      <wsdl:output message="tns:addStudentResponse" name="addStudentResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStudent">
+      <wsdl:input message="tns:getStudentRequest" name="getStudentRequest"></wsdl:input>
+      <wsdl:output message="tns:getStudentResponse" name="getStudentResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="StudentsPortTypeSoap11" type="tns:StudentsPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="addStudent">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="addStudentRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addStudentResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStudent">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getStudentRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getStudentResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="StudentsPortTypeService">
+    <wsdl:port binding="tns:StudentsPortTypeSoap11" name="StudentsPortTypeSoap11">
+      <soap:address location="http://localhost:8080/springbootsoap/locationUriWS"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/springbootsoap/locationUriWS</con:endpoint></con:endpoints><con:operation id="b84a09e6-e8ac-48ff-8aff-785fca2ac2cc" isOneWay="false" action="" name="addStudent" bindingOperationName="addStudent" type="Request-Response" outputName="addStudentResponse" inputName="addStudentRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="acace3b4-83de-488d-92c5-29f865b76d7b" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/springbootsoap/locationUriWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://ecristobale.com/soap">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <soap:addStudentRequest>\r
+         <soap:student>\r
+            <soap:studentId>3</soap:studentId>\r
+            <soap:name>benito</soap:name>\r
+            <soap:age>23</soap:age>\r
+            <soap:class>ert</soap:class>\r
+         </soap:student>\r
+      </soap:addStudentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ecristobale.com/soap/StudentsPortType/addStudentRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="cec37d22-53d8-4da8-b802-0d07538b9d0d" isOneWay="false" action="" name="getStudent" bindingOperationName="getStudent" type="Request-Response" outputName="getStudentResponse" inputName="getStudentRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8451ee9e-17d7-4378-b720-db0ca0a22a50" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/springbootsoap/locationUriWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://ecristobale.com/soap">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <soap:getStudentRequest>\r
+         <soap:studentId>1</soap:studentId>\r
+      </soap:getStudentRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ecristobale.com/soap/StudentsPortType/getStudentRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

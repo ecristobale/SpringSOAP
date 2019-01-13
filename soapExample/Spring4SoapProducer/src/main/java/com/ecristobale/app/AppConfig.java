@@ -34,4 +34,23 @@ public class AppConfig extends WsConfigurerAdapter {
 	public XsdSchema studentsSchema() {
 		return new SimpleXsdSchema(new ClassPathResource("students.xsd"));
 	}
+	
+	@Bean(name = "articlesWsdl")
+	public DefaultWsdl11Definition defaultWsdl11DefinitionArticles(XsdSchema articlesSchema) {
+		DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
+		// PortTypeName no influye
+		wsdl11Definition.setPortTypeName("ArticlesPortType"); 
+		// indica que el WS va a estar en localhost:8080/{artifactId}/-> URI <-
+		// será leído por SOAP UI cuando lea el WSDL y apuntará ahí, debe estar dentro del
+		// rango de mapeo del servlet dispatcher configurado en: WebAppInitializer
+		wsdl11Definition.setLocationUri("/articlesUriWS");
+		wsdl11Definition.setTargetNamespace("http://ecristobal.com/article");
+		wsdl11Definition.setSchema(articlesSchema);
+		return wsdl11Definition;
+	}
+
+	@Bean
+	public XsdSchema articlesSchema() {
+		return new SimpleXsdSchema(new ClassPathResource("articles.xsd"));
+	}
 }

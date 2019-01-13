@@ -6,10 +6,11 @@
 //
 
 
-package com.ecristobale.soap;
+package com.ecristobal.article;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -24,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="studentId" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="articleInfo" type="{http://ecristobal.com/article}articleInfo"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -35,27 +36,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "studentId"
+    "articleInfo"
 })
-@XmlRootElement(name = "addStudentResponse")
-public class AddStudentResponse {
+@XmlRootElement(name = "getArticleByIdResponse")
+public class GetArticleByIdResponse {
 
-    protected int studentId;
+    @XmlElement(required = true)
+    protected ArticleInfo articleInfo;
 
     /**
-     * Obtiene el valor de la propiedad studentId.
+     * Obtiene el valor de la propiedad articleInfo.
      * 
+     * @return
+     *     possible object is
+     *     {@link ArticleInfo }
+     *     
      */
-    public int getStudentId() {
-        return studentId;
+    public ArticleInfo getArticleInfo() {
+        return articleInfo;
     }
 
     /**
-     * Define el valor de la propiedad studentId.
+     * Define el valor de la propiedad articleInfo.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link ArticleInfo }
+     *     
      */
-    public void setStudentId(int value) {
-        this.studentId = value;
+    public void setArticleInfo(ArticleInfo value) {
+        this.articleInfo = value;
     }
 
 }

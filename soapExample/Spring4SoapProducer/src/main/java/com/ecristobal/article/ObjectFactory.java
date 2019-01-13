@@ -6,7 +6,7 @@
 //
 
 
-package com.ecristobale.soap;
+package com.ecristobal.article;
 
 import javax.xml.bind.annotation.XmlRegistry;
 
@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.XmlRegistry;
 /**
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
- * generated in the com.ecristobale.soap package. 
+ * generated in the com.ecristobal.article package. 
  * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
@@ -30,50 +30,34 @@ public class ObjectFactory {
 
 
     /**
-     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.ecristobale.soap
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.ecristobal.article
      * 
      */
     public ObjectFactory() {
     }
 
     /**
-     * Create an instance of {@link GetStudentResponse }
+     * Create an instance of {@link GetArticleByIdResponse }
      * 
      */
-    public GetStudentResponse createGetStudentResponse() {
-        return new GetStudentResponse();
+    public GetArticleByIdResponse createGetArticleByIdResponse() {
+        return new GetArticleByIdResponse();
     }
 
     /**
-     * Create an instance of {@link Student }
+     * Create an instance of {@link ArticleInfo }
      * 
      */
-    public Student createStudent() {
-        return new Student();
+    public ArticleInfo createArticleInfo() {
+        return new ArticleInfo();
     }
 
     /**
-     * Create an instance of {@link GetStudentRequest }
+     * Create an instance of {@link GetArticleByIdRequest }
      * 
      */
-    public GetStudentRequest createGetStudentRequest() {
-        return new GetStudentRequest();
-    }
-
-    /**
-     * Create an instance of {@link AddStudentRequest }
-     * 
-     */
-    public AddStudentRequest createAddStudentRequest() {
-        return new AddStudentRequest();
-    }
-
-    /**
-     * Create an instance of {@link AddStudentResponse }
-     * 
-     */
-    public AddStudentResponse createAddStudentResponse() {
-        return new AddStudentResponse();
+    public GetArticleByIdRequest createGetArticleByIdRequest() {
+        return new GetArticleByIdRequest();
     }
 
 }
